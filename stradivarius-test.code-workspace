@@ -1,11 +1,11 @@
 {
   "folders": [
     {
-      "path": ".."
+      "path": "./"
     }
   ],
   "settings": {
-    "prettier.configPath": "./../pretierrc.json",
+    "prettier.configPath": "./.pretierrc.json",
     "editor.formatOnSave": true
   }
 }
