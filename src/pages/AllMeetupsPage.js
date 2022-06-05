@@ -1,16 +1,25 @@
+import { useFetch } from "./../util-hooks/useFetch";
 import MeetupItem from "../components/meetups/MeetupItem";
 import classes from "./../components/meetups/MeetupList.module.css";
 
+export default function AllMeetupsPage({favorites, setFavorites}) {
+  const { data } = useFetch({
+    url: "/data.json",
+  });
 
-export default function AllMeetupsPage() {
+  if (!data) return <p>Loading...</p>;
+
   return (
     <section>
       <h1>All Meetups</h1>
       <ul className={classes.list}>
-        <MeetupItem />
-        <MeetupItem />
-        <MeetupItem />
-        <MeetupItem />
+        {data.map((meetupItemData) => 
+          <MeetupItem 
+            item={meetupItemData} 
+            key={meetupItemData.id}
+            isFavorite={!!favorites.find((fav) => fav.id === meetupItemData.id)} 
+            setFavorites={setFavorites}/>
+        )}
       </ul>
     </section>
   );
