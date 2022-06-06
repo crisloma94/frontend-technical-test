@@ -1,10 +1,14 @@
-# Getting Started with Create React App
+# Stradivarius test
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
 In the project directory, you can run:
+
+### `npm install`
+
+To install all the dependencies
 
 ### `npm start`
 
@@ -39,32 +43,37 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+### `npm run serve`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Serves the built app on localhost server.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-### Code Splitting
+## How to see the final result
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+In the project directory, run the following commands:
 
-### Analyzing the Bundle Size
+`npm install`\
+`npm run build`\
+`npm run serve`\
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Open [http://localhost:3000](http://localhost:3000) to view the final app in your browser.
 
-### Making a Progressive Web App
+## Final implementation explained
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+The following bugs have been fixed:
 
-### Advanced Configuration
+- You can add/remove favorites
+- You can add new meetups
+- You can see your favorites at the favorites page
+- The names of the component files and their export names have been changed to be the same
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+New features:
 
-### Deployment
+- The desired scroll behaviour has been implemented, including a debounce hook to improve performance
+- More unit testing with enzyme have also been added
+- Static testing and formatting with prettier has been added for vscode users on workspace file
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Due to the short deadline and the size of the app, I have implemented all the logic using react states and passing them by props.
+If the app was a real project and I had a clear vision of how is going to evolve, a solution with redux or context API, depending on the needs of the project, would be a better choice for managing general states.
+Also, a backend-mock with json-server or a similar library could be implemented to provide the data that should come from the server.
